@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activitys.LoginActivity">
+
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/userphoto"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp">
+
+    </ImageView>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_mail"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="信箱:"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/reg_editext_sytle"
+        android:inputType="textPersonName">
+
+    </EditText>
+    <EditText
+        android:layout_width="300dp"
+        android:background="@drawable/reg_editext_sytle"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_password"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="密碼:"
+        android:layout_marginTop="55dp"
+        android:inputType="textPassword">
+
+    </EditText>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_btn"
+        android:background="@drawable/reg_btn_style"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"
+        android:text="登入"
+        android:textColor="#fff">
+
+    </Button>
+    <Button
+        android:layout_width="300dp"
+        android:background="@drawable/reg_btn_style"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_reg"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"
+        android:text="註冊"
+        android:textColor="#fff">
+
+    </Button>
+</LinearLayout>

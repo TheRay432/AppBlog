@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activitys.RegisterActivity">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/reg_image"
+        android:layout_gravity="center"
+        android:src="@drawable/userphoto"
+        android:layout_marginTop="75dp">
+
+    </ImageView>
+    <EditText
+        android:background="@drawable/reg_editext_sytle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_name"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="姓名:"
+        android:inputType="textPersonName"
+        android:layout_marginTop="45dp">
+
+    </EditText>
+    <EditText
+        android:background="@drawable/reg_editext_sytle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_Mail"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="信箱:"
+        android:inputType="textPersonName"
+        android:layout_marginTop="45dp">
+
+    </EditText>
+    <EditText
+        android:background="@drawable/reg_editext_sytle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_Password"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="密碼:"
+        android:inputType="textPassword"
+        android:layout_marginTop="45dp">
+
+    </EditText>
+    <EditText
+        android:background="@drawable/reg_editext_sytle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_Password2"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="確認密碼:"
+        android:inputType="textPassword"
+        android:layout_marginTop="45dp">
+
+    </EditText>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_btn"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/reg_btn_style"
+        android:textColor="#fff"
+        android:text="註冊">
+
+    </Button>
+
+</LinearLayout>

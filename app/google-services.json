@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "366746374344",
+    "project_id": "appblog-fea07",
+    "storage_bucket": "appblog-fea07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366746374344:android:bcd2be1bd2134f6bb815fd",
+        "android_client_info": {
+          "package_name": "com.example.appblog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366746374344-c6bfrv6lomtrkohkb19gaprqtqjt7ovj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFZ8S_P-Eglb8OjEwlG4rRvrc6OxrwS9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366746374344-c6bfrv6lomtrkohkb19gaprqtqjt7ovj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
