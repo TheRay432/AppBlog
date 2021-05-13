@@ -148,9 +148,8 @@ public class HomeFragment extends Fragment {
         dialog=new Dialog(activity);
         dialog.setContentView(R.layout.home_dialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().setLayout(Toolbar.LayoutParams.MATCH_PARENT,Toolbar.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(Toolbar.LayoutParams.MATCH_PARENT,Toolbar.LayoutParams.MATCH_PARENT);
         dialog.getWindow().getAttributes().gravity=Gravity.CENTER;
-
         dialogContent=dialog.findViewById(R.id.dialog_imageContent);
         dialogContent.setOnClickListener(myContent);
         dialogUser=dialog.findViewById(R.id.dialog_imageUser);

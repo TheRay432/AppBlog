@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    app:cardCornerRadius="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="70dp"
@@ -60,5 +65,6 @@
         android:textColor="#fff">
 
     </Button>
+    </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

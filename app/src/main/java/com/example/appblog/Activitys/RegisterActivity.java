@@ -7,7 +7,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -36,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ImageView reg_img;
     private EditText reg_name,reg_mail,reg_password,reg_password2;
     private Button reg_btn;
-    final int REQ=1;
+
     Uri pickImageUri=null;
     FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
@@ -153,18 +155,22 @@ public class RegisterActivity extends AppCompatActivity {
     private void open() {
         Intent i=new Intent(Intent.ACTION_OPEN_DOCUMENT);
         i.setType("image/*");
-        startActivityForResult(i,REQ);
+        startActivityForResult(i,1);
     }
 
     private void check() {
         if(ContextCompat.checkSelfPermission(RegisterActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)
         !=PackageManager.PERMISSION_GRANTED){
-            if(ActivityCompat.shouldShowRequestPermissionRationale(RegisterActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)){
-                ActivityCompat.requestPermissions(RegisterActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQ);
-            }
-            else {
-                ActivityCompat.requestPermissions(RegisterActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQ);
-            }
+
+
+
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+
+
+
+
+
+
         }
         else {
             open();
@@ -174,22 +180,39 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==REQ && resultCode==RESULT_OK && data!=null);
+        if(requestCode==1 && resultCode==RESULT_OK && data!=null);
             pickImageUri=data.getData();
             reg_img.setImageURI(pickImageUri);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode){
-            case REQ:{
-                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                    open();
+
+        if(requestCode==1){
+            if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                open();
+            }
+            else if(grantResults[0]==PackageManager.PERMISSION_DENIED) {
+                if(ActivityCompat.shouldShowRequestPermissionRationale(RegisterActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)){
+                    AlertDialog.Builder builder=new AlertDialog.Builder(this);
+                    builder.setTitle("權限需求")
+                            .setMessage("需要同意")
+                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    ActivityCompat.requestPermissions(RegisterActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+                                }
+                            });
+                    builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    builder.show();
                 }
-                break;
             }
         }
-
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
